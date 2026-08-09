@@ -1,0 +1,585 @@
+/* =====================================================
+   NEXMEET AUTH PAGE
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =====================================================
+   PAGE
+===================================================== */
+
+.authPage {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(91, 46, 180, 0.16),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 15% 85%,
+      rgba(72, 38, 130, 0.10),
+      transparent 30%
+    ),
+    #080a12;
+
+  color: white;
+
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   WRAPPER
+===================================================== */
+
+.authFormWrapper {
+  width: 100%;
+  max-width: 590px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.authFormCard {
+  width: 100%;
+
+  padding: 42px 48px 35px;
+
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(22, 24, 34, 0.94),
+      rgba(14, 15, 23, 0.96)
+    );
+
+  border:
+    1px solid rgba(255, 255, 255, 0.09);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.40);
+
+  backdrop-filter: blur(25px);
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.authFormHeader {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+
+.authFormHeader h2 {
+  color: #f5f5f7;
+
+  font-size: 36px;
+
+  font-weight: 700;
+
+  letter-spacing: -1.2px;
+
+  margin-bottom: 8px;
+}
+
+
+.authFormHeader p {
+  color: #979aa8;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   TABS
+===================================================== */
+
+.authTabs {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 5px;
+
+  padding: 5px;
+
+  margin-bottom: 26px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(0, 0, 0, 0.30);
+}
+
+
+.authTab {
+  height: 48px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #858895;
+
+  font-family: inherit;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+
+.authTab:hover {
+  color: #dedee5;
+}
+
+
+.authTab.active {
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7048dc,
+      #8b5cf6
+    );
+
+  box-shadow:
+    0 8px 25px rgba(139, 92, 246, 0.28);
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.authForm {
+  width: 100%;
+}
+
+
+/* =====================================================
+   ALL MUI INPUTS
+===================================================== */
+
+/*
+   IMPORTANT:
+   These rules apply to Full Name,
+   Username AND Password.
+*/
+
+.authInput {
+  width: 100% !important;
+
+  margin-top: 12px !important;
+
+  margin-bottom: 8px !important;
+}
+
+
+/* Input container */
+
+.authInput .MuiOutlinedInput-root {
+  width: 100%;
+
+  min-height: 58px;
+
+  color: white !important;
+
+  background:
+    rgba(255, 255, 255, 0.015) !important;
+
+  border-radius: 13px !important;
+}
+
+
+/* Actual text */
+
+.authInput .MuiOutlinedInput-input {
+  color: white !important;
+
+  font-size: 16px !important;
+
+  padding:
+    16px 16px !important;
+
+  background: transparent !important;
+}
+
+
+/* Label */
+
+.authInput .MuiInputLabel-root {
+  color: #8e92a1 !important;
+
+  font-size: 15px !important;
+}
+
+
+/* Label when focused */
+
+.authInput
+.MuiInputLabel-root.Mui-focused {
+  color: #9b6cff !important;
+}
+
+
+/* Normal border */
+
+.authInput
+.MuiOutlinedInput-notchedOutline {
+  border:
+    1px solid #454854 !important;
+
+  border-radius: 13px !important;
+}
+
+
+/* Hover */
+
+.authInput
+.MuiOutlinedInput-root:hover
+.MuiOutlinedInput-notchedOutline {
+  border-color:
+    #696d7c !important;
+}
+
+
+/* Focus */
+
+.authInput
+.MuiOutlinedInput-root.Mui-focused
+.MuiOutlinedInput-notchedOutline {
+  border:
+    1px solid #8b5cf6 !important;
+
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.15);
+}
+
+
+/* =====================================================
+   REMOVE LIGHT PASSWORD / AUTOFILL BACKGROUND
+===================================================== */
+
+.authInput
+input:-webkit-autofill,
+.authInput
+input:-webkit-autofill:hover,
+.authInput
+input:-webkit-autofill:focus,
+.authInput
+input:-webkit-autofill:active {
+
+  -webkit-text-fill-color: white !important;
+
+  -webkit-box-shadow:
+    0 0 0 1000px #151720 inset !important;
+
+  box-shadow:
+    0 0 0 1000px #151720 inset !important;
+
+  transition:
+    background-color 5000s ease-in-out 0s;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.authError {
+  color: #ff6978;
+
+  font-size: 13px;
+
+  margin:
+    5px 0 0;
+
+  text-align: left;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.authSubmit {
+  width: 100% !important;
+
+  height: 56px !important;
+
+  margin-top: 20px !important;
+
+  border-radius: 13px !important;
+
+  color: white !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7048dc,
+      #8b5cf6
+    ) !important;
+
+  font-family: inherit !important;
+
+  font-size: 17px !important;
+
+  font-weight: 600 !important;
+
+  text-transform: none !important;
+
+  box-shadow:
+    0 10px 30px rgba(139, 92, 246, 0.25) !important;
+
+  transition: all 0.25s ease !important;
+}
+
+
+.authSubmit span {
+  margin-left: 12px;
+
+  font-size: 21px;
+}
+
+
+.authSubmit:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(139, 92, 246, 0.40) !important;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+.authFooter {
+  text-align: center;
+
+  color: #858895;
+
+  font-size: 14px;
+
+  margin-top: 22px;
+}
+
+
+.authFooter button {
+  border: none;
+
+  background: transparent;
+
+  color: #a477ff;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  margin-left: 5px;
+}
+
+
+.authFooter button:hover {
+  color: #c084fc;
+}
+
+
+/* =====================================================
+   PRIVACY
+===================================================== */
+
+.authPrivacy {
+  color: #696d7b;
+
+  font-size: 12px;
+
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 650px) {
+
+   .authTopLogo {
+    top: 18px;
+    left: 20px;
+    font-size: 27px;
+  }
+
+  .authPage {
+    padding: 15px;
+  }
+
+
+  .authFormCard {
+    padding:
+      32px 25px 28px;
+
+    border-radius: 22px;
+  }
+
+
+  .authFormHeader h2 {
+    font-size: 29px;
+  }
+
+
+  .authFormHeader p {
+    font-size: 13px;
+  }
+
+
+  .authTabs {
+    margin-bottom: 22px;
+  }
+
+}
+
+
+@media (max-width: 450px) {
+
+  .authPage {
+    padding: 10px;
+  }
+
+
+  .authFormCard {
+    padding:
+      28px 18px 25px;
+
+    border-radius: 20px;
+  }
+
+
+  .authFormHeader h2 {
+    font-size: 25px;
+  }
+
+
+  .authFormHeader p {
+    font-size: 12px;
+  }
+
+
+  .authTab {
+    height: 45px;
+
+    font-size: 14px;
+  }
+
+
+  .authInput
+  .MuiOutlinedInput-root {
+    min-height: 54px;
+  }
+
+
+  .authSubmit {
+    height: 53px !important;
+  }
+
+
+  .authPrivacy {
+    font-size: 11px;
+  }
+
+}
+
+
+/* =====================================================
+   TOP LEFT NEXMEET LOGO
+===================================================== */
+
+.authTopLogo {
+  position: absolute;
+
+  top: 28px;
+  left: 40px;
+
+  font-size: 32px;
+
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  color: #f5f5f7;
+
+  z-index: 10;
+}
+
+.authTopLogo span {
+  background:
+    linear-gradient(
+      90deg,
+      #8b5cf6,
+      #a855f7
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

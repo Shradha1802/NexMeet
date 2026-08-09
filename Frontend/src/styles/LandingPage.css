@@ -1,0 +1,500 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* =====================================================
+   NEXMEET LANDING PAGE
+===================================================== */
+
+.landingPageContainer {
+  width: 100%;
+  min-height: 100vh;
+
+  color: white;
+
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 85% 5%,
+      rgba(91, 46, 180, 0.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(72, 38, 130, 0.08),
+      transparent 30%
+    ),
+    #080a12;
+
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.landingPageContainer nav {
+  width: 100%;
+  height: 100px;
+
+  padding: 0 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: relative;
+  z-index: 10;
+}
+
+
+/* =====================================================
+   NEXMEET LOGO
+===================================================== */
+
+.landingPageContainer nav .nav-header h2 {
+  margin: 0;
+
+  font-family: "Poppins", sans-serif;
+
+  color: #ffffff;
+
+  font-size: 46px;
+
+  font-weight: 800;
+
+  letter-spacing: -2.5px;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.landingPageContainer nav .nav-header h2 span {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #a855f7,
+    #c084fc
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =====================================================
+   NAVIGATION LINKS
+===================================================== */
+
+.landingPageContainer nav .nav-list {
+  display: flex;
+  align-items: center;
+
+  gap: 42px;
+}
+
+.landingPageContainer nav .nav-list p {
+  margin: 0;
+
+  color: #d2d3dc;
+
+  font-family: "Poppins", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.landingPageContainer nav .nav-list p:hover {
+  color: #a477ff;
+
+  transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   HERO SECTION
+===================================================== */
+
+.landingMainContainer {
+  width: 100%;
+
+  min-height: calc(100vh - 100px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 50px 50px;
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND GLOW
+===================================================== */
+
+.landingMainContainer::before {
+  content: "";
+
+  position: absolute;
+
+  width: 700px;
+  height: 700px;
+
+  left: -300px;
+  bottom: -350px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.16),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.landingMainContainer::after {
+  content: "";
+
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  right: -200px;
+  top: -250px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.20),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =====================================================
+   LEFT HERO CONTENT
+===================================================== */
+
+.landingHeroContent {
+  width: 50%;
+  max-width: 720px;
+
+  padding-left: 5px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =====================================================
+   HERO HEADING
+===================================================== */
+
+.landingHeroContent h1 {
+  margin: 0 0 20px;
+
+  color: #f5f5f7;
+
+  font-size: clamp(48px, 5vw, 68px);
+
+  font-weight: 700;
+
+  line-height: 1.08;
+
+  letter-spacing: -2.5px;
+}
+
+.landingHeroContent h1 span {
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #a855f7,
+    #c084fc
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.landingHeroContent > p {
+  margin: 0 0 32px;
+
+  color: #9296a6;
+
+  font-size: 18px;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   GET STARTED BUTTON
+===================================================== */
+
+.getStartedBtn {
+    width: 70px;
+    height: 70px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(
+    135deg,
+    #7048dc,
+    #8b5cf6
+  );
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.getStartedBtn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px
+    rgba(139, 92, 246, 0.40);
+}
+
+.getStartedBtn a {
+  display: block;
+
+  padding: 15px 25px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 16px;
+
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   PHONE / HERO IMAGE
+===================================================== */
+
+.landingHeroImage {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.landingHeroImage img {
+  width: min(100%, 680px);
+
+  max-height: 680px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 30px 50px
+      rgba(0, 0, 0, 0.45)
+    );
+
+  transform: translateX(10px);
+
+  transition: transform 0.4s ease;
+}
+
+.landingHeroImage img:hover {
+  transform:
+    translateX(10px)
+    translateY(-5px);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .landingPageContainer nav {
+    height: 90px;
+    padding: 0 30px;
+  }
+
+  .landingPageContainer nav .nav-header h2 {
+    font-size: 40px;
+  }
+
+  .landingMainContainer {
+    padding: 30px;
+
+    gap: 20px;
+
+    min-height: calc(100vh - 90px);
+  }
+
+  .landingHeroContent h1 {
+    font-size: 48px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .landingHeroImage img {
+    width: 100%;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .landingPageContainer {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .landingPageContainer nav {
+    height: 80px;
+
+    padding: 0 20px;
+  }
+
+  .landingPageContainer nav .nav-header h2 {
+    font-size: 34px;
+  }
+
+  .landingPageContainer nav .nav-list {
+    gap: 15px;
+  }
+
+  .landingPageContainer nav .nav-list p {
+    font-size: 12px;
+  }
+
+  .landingMainContainer {
+    min-height: auto;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 45px 20px 50px;
+
+    gap: 35px;
+
+    text-align: center;
+  }
+
+  .landingHeroContent {
+    width: 100%;
+
+    padding: 0;
+  }
+
+  .landingHeroContent h1 {
+    font-size: 40px;
+
+    line-height: 1.12;
+
+    letter-spacing: -1.2px;
+  }
+
+  .landingHeroContent > p {
+    font-size: 15px;
+  }
+
+  .landingHeroImage {
+    width: 100%;
+  }
+
+  .landingHeroImage img {
+    width: 90%;
+
+    max-height: 500px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .landingPageContainer nav {
+    padding: 0 15px;
+  }
+
+  .landingPageContainer nav .nav-header h2 {
+    font-size: 30px;
+  }
+
+  .landingPageContainer nav .nav-list {
+    gap: 10px;
+  }
+
+  .landingPageContainer nav .nav-list p {
+    font-size: 11px;
+  }
+
+  .landingMainContainer {
+    padding: 35px 15px 40px;
+  }
+
+  .landingHeroContent h1 {
+    font-size: 34px;
+  }
+
+  .landingHeroImage img {
+    width: 100%;
+  }
+}

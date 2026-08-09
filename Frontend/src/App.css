@@ -1,0 +1,1017 @@
+.landingPageContainer{
+    width: 100vw;
+    height: 100vh;
+    background:url("/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  color: white ;
+}
+
+/* Landing page navbar */
+.landingPageContainer nav{
+    padding-inline:1.2rem;
+    padding-block: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.landingPageContainer nav h2{
+    font-size: 1.8rem;
+    font-weight:500 ;
+}
+.landingPageContainer nav .nav-list{
+    display: flex;
+    gap: 1.6rem;
+    cursor: pointer;
+}
+
+/* Landing page Main Container */
+.landingMainContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3rem;
+    height: 70vh;
+    align-items: center  ;
+}
+.landingMainContainer>div:nth-child(1) {
+    font-size: 2rem;
+}
+.landingMainContainer>div:nth-child(1) div[role="button"]{
+    background-color: #FF9839;
+    width:fit-content;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1.9rem;
+}
+.landingMainContainer>div:nth-child(1) div[role="button"] a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.7rem;
+}
+
+
+.landingMainContainer>div:nth-child(2) img{
+    height: 80vh;
+    width: auto;
+}
+
+.navBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 20px;
+    text-align: center ;
+}
+.meetContainer{
+    display: flex;
+    padding-inline: 20px;
+    height: 80vh;
+    gap:10vw;
+    justify-content:center;
+}
+.leftPanel{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.rightPanel{
+    display: flex;
+    align-items: center;
+}
+.rightPanel>img{
+    width: 30vw;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+
+
+/* =====================================================
+   NEXMEET HOME PAGE
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.homePage {
+  width: 100%;
+  height: 100vh;
+  min-height: 0;
+
+  background:
+    radial-gradient(
+      circle at 85% 45%,
+      rgba(91, 46, 180, 0.20),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(72, 38, 130, 0.10),
+      transparent 30%
+    ),
+    #080a12;
+
+  color: white;
+
+  font-family:
+    "Poppins",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  overflow: hidden;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.homeHeader {
+  width: 100%;
+  height: 80px;
+
+  padding: 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: rgba(8, 10, 18, 0.65);
+
+  backdrop-filter: blur(15px);
+}
+
+
+/* LOGO */
+
+.homeLogo {
+  font-size: 34px;
+  font-weight: 800;
+
+  letter-spacing: -1.5px;
+
+  color: #f5f5f5;
+}
+
+.homeLogo span {
+  background:
+    linear-gradient(
+      90deg,
+      #8b5cf6,
+      #a855f7
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   HEADER BUTTONS
+===================================================== */
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+
+.historyBtn {
+  color: #e4e4e4 !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.10) !important;
+
+  border-radius: 11px !important;
+
+  padding: 10px 20px !important;
+
+  font-size: 15px !important;
+
+  text-transform: none !important;
+
+  transition: 0.25s !important;
+}
+
+.historyBtn:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+
+  border-color: rgba(139, 92, 246, 0.5) !important;
+
+  transform: translateY(-1px);
+}
+
+
+.logoutBtn {
+  color: white !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6845d8,
+      #7c4ee8
+    ) !important;
+
+  border-radius: 11px !important;
+
+  padding: 10px 21px !important;
+
+  font-size: 15px !important;
+
+  text-transform: none !important;
+
+  box-shadow:
+    0 8px 25px rgba(124, 78, 232, 0.25);
+
+  transition: 0.25s !important;
+}
+
+.logoutBtn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(124, 78, 232, 0.40);
+}
+
+
+/* =====================================================
+   MAIN LAYOUT
+===================================================== */
+
+.homeMain {
+  width: 100%;
+  max-width: 1450px;
+
+  height: calc(100vh - 80px);
+
+  margin: auto;
+
+  padding: 35px 50px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(400px, 0.85fr);
+
+  align-items: center;
+
+  gap: 55px;
+}
+
+
+/* =====================================================
+   LEFT SECTION
+===================================================== */
+
+.homeLeft {
+  max-width: 680px;
+}
+
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.qualityBadge {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 17px;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #d0d0d0;
+
+  font-size: 14px;
+
+  margin-bottom: 28px;
+}
+
+.qualityBadge svg {
+  color: #9b6cff;
+
+  font-size: 21px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.homeHeading {
+  font-size: clamp(42px, 4vw, 60px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 750;
+
+  color: #f7f7f8;
+
+  margin-bottom: 20px;
+}
+
+.homeHeading span {
+  background:
+    linear-gradient(
+      90deg,
+      #8b5cf6,
+      #a855f7,
+      #c084fc
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =====================================================
+   SUBTITLE
+===================================================== */
+
+.homeSubtitle {
+  max-width: 600px;
+
+  font-size: 17px;
+
+  line-height: 1.6;
+
+  color: #a9adbb;
+
+  margin-bottom: 30px;
+}
+
+
+/* =====================================================
+   MEETING CODE
+===================================================== */
+
+.joinSection h3 {
+  font-size: 16px;
+
+  font-weight: 600;
+
+  color: #ededed;
+
+  margin-bottom: 12px;
+}
+
+
+.meetingInputWrapper {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+/* =====================================================
+   MUI TEXT FIELD
+===================================================== */
+
+.meetingInput {
+  flex: 1;
+
+  max-width: 430px;
+}
+
+
+.meetingInput .MuiOutlinedInput-root {
+  height: 58px;
+
+  border-radius: 12px;
+
+  color: white;
+
+  background: rgba(255, 255, 255, 0.015);
+}
+
+
+.meetingInput .MuiOutlinedInput-input {
+  color: white;
+
+  font-size: 16px;
+}
+
+
+.meetingInput .MuiOutlinedInput-input::placeholder {
+  color: #777b8b;
+
+  opacity: 1;
+}
+
+
+.meetingInput .MuiInputLabel-root {
+  color: #9295a2;
+}
+
+
+.meetingInput .MuiInputLabel-root.Mui-focused {
+  color: #9b6cff;
+}
+
+
+.meetingInput .MuiOutlinedInput-notchedOutline {
+  border-color: #464858;
+}
+
+
+.meetingInput
+.MuiOutlinedInput-root:hover
+.MuiOutlinedInput-notchedOutline {
+  border-color: #77708e;
+}
+
+
+.meetingInput
+.MuiOutlinedInput-root.Mui-focused
+.MuiOutlinedInput-notchedOutline {
+  border-color: #8b5cf6;
+
+  border-width: 1px;
+}
+
+
+/* =====================================================
+   JOIN BUTTON
+===================================================== */
+
+.joinMeetingBtn {
+  height: 58px !important;
+
+  min-width: 135px !important;
+
+  padding: 0 25px !important;
+
+  border-radius: 12px !important;
+
+  color: white !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7048dc,
+      #8b5cf6
+    ) !important;
+
+  font-size: 17px !important;
+
+  font-weight: 600 !important;
+
+  text-transform: none !important;
+
+  box-shadow:
+    0 10px 25px rgba(139, 92, 246, 0.25);
+
+  transition: 0.25s !important;
+}
+
+.joinMeetingBtn span {
+  margin-left: 10px;
+
+  font-size: 22px;
+}
+
+.joinMeetingBtn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 35px rgba(139, 92, 246, 0.40);
+}
+
+
+/* =====================================================
+   FEATURES
+===================================================== */
+
+.homeFeatures {
+  width: 100%;
+
+  max-width: 680px;
+
+  margin-top: 38px;
+
+  padding: 20px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 18px;
+
+  border-radius: 18px;
+
+  background:
+    rgba(255, 255, 255, 0.035);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.05);
+
+  backdrop-filter: blur(15px);
+}
+
+
+.homeFeature {
+  display: flex;
+
+  gap: 11px;
+
+  align-items: flex-start;
+}
+
+
+.homeFeature svg {
+  flex-shrink: 0;
+
+  font-size: 27px;
+
+  color: #9669ff;
+
+  margin-top: 1px;
+}
+
+
+.homeFeature h4 {
+  font-size: 15px;
+
+  color: #f3f3f3;
+
+  margin-bottom: 5px;
+}
+
+
+.homeFeature p {
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  color: #9296a6;
+}
+
+
+/* =====================================================
+   RIGHT SECTION
+===================================================== */
+
+.homeRight {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   VISUAL CARD
+===================================================== */
+
+.visualCard {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 570px;
+
+  height: min(520px, calc(100vh - 170px));
+
+  min-height: 420px;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #1b1240,
+      #100d23
+    );
+
+  border:
+    1px solid rgba(139, 92, 246, 0.20);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.45);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   PURPLE GLOW
+===================================================== */
+
+.visualGlow {
+  position: absolute;
+
+  width: 430px;
+
+  height: 430px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.35),
+      transparent 70%
+    );
+
+  filter: blur(10px);
+
+  z-index: 0;
+}
+
+
+/* =====================================================
+   IMAGE
+===================================================== */
+
+.visualCard img {
+  position: relative;
+
+  z-index: 1;
+
+  width: 92%;
+
+  height: 92%;
+
+  object-fit: contain;
+
+  border-radius: 20px;
+
+  filter:
+    drop-shadow(
+      0 25px 35px rgba(0, 0, 0, 0.55)
+    );
+
+  transition: 0.5s;
+}
+
+
+.visualCard:hover img {
+  transform: scale(1.025);
+}
+
+
+/* =====================================================
+   IMAGE OVERLAY
+===================================================== */
+
+.visualOverlay {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 25px;
+
+  right: 25px;
+
+  bottom: 22px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.liveIndicator {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: rgba(10, 10, 18, 0.75);
+
+  backdrop-filter: blur(10px);
+
+  font-size: 13px;
+
+  color: #e7e7e7;
+}
+
+
+.liveIndicator span {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #8b5cf6;
+
+  box-shadow:
+    0 0 10px #8b5cf6;
+}
+
+
+.participantCount {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 20px;
+
+  background: rgba(10, 10, 18, 0.75);
+
+  backdrop-filter: blur(10px);
+
+  color: #d5d5d5;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .homePage {
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+  }
+
+
+  .homeHeader {
+    padding: 0 35px;
+  }
+
+
+  .homeMain {
+    height: auto;
+
+    grid-template-columns: 1fr;
+
+    padding: 45px 40px;
+
+    gap: 50px;
+  }
+
+
+  .homeLeft {
+    max-width: 750px;
+
+    margin: auto;
+  }
+
+
+  .homeRight {
+    max-width: 700px;
+
+    margin: auto;
+  }
+
+
+  .visualCard {
+    height: 500px;
+
+    max-width: 650px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .homePage {
+    min-height: 100vh;
+
+    height: auto;
+
+    overflow-y: auto;
+  }
+
+
+  .homeHeader {
+    height: auto;
+
+    min-height: 72px;
+
+    padding: 16px 20px;
+
+    gap: 15px;
+  }
+
+
+  .homeLogo {
+    font-size: 29px;
+
+    letter-spacing: -1px;
+  }
+
+
+  .headerActions {
+    gap: 5px;
+  }
+
+
+  .historyBtn,
+  .logoutBtn {
+    min-width: auto !important;
+
+    padding: 8px 11px !important;
+
+    font-size: 12px !important;
+  }
+
+
+  .homeMain {
+    padding: 38px 20px 45px;
+
+    gap: 42px;
+  }
+
+
+  .qualityBadge {
+    font-size: 12px;
+
+    padding: 8px 12px;
+
+    margin-bottom: 22px;
+  }
+
+
+  .qualityBadge svg {
+    font-size: 18px;
+  }
+
+
+  .homeHeading {
+    font-size: 42px;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 18px;
+  }
+
+
+  .homeSubtitle {
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    margin-bottom: 27px;
+  }
+
+
+  .meetingInputWrapper {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 12px;
+  }
+
+
+  .meetingInput {
+    max-width: none;
+
+    width: 100%;
+  }
+
+
+  .joinMeetingBtn {
+    width: 100% !important;
+  }
+
+
+  .homeFeatures {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+
+    margin-top: 32px;
+  }
+
+
+  .visualCard {
+    height: 400px;
+
+    min-height: 0;
+
+    border-radius: 20px;
+  }
+
+
+  .visualGlow {
+    width: 320px;
+
+    height: 320px;
+  }
+
+
+  .visualOverlay {
+    left: 15px;
+
+    right: 15px;
+
+    bottom: 15px;
+  }
+}
+
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 450px) {
+
+  .homeHeader {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 18px 20px;
+  }
+
+
+  .headerActions {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+
+  .homeHeading {
+    font-size: 36px;
+  }
+
+
+  .visualCard {
+    height: 330px;
+  }
+
+
+  .visualOverlay {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
+  }
+}
