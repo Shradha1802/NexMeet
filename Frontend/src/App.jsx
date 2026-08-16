@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import History from "./pages/History";
 
 const App = () => {
+  console.log("hello")
   return (
     <>
       <Router>
