@@ -24,10 +24,10 @@ import {
   FiUsers,
   FiZap,
 } from "react-icons/fi";
-import server from "../environment";
+// import server from "../environment";
 
 
-const server_url = server;
+const server_url = "http://localhost:8080";
 
 var connections = {};
 
@@ -58,7 +58,7 @@ export default function VideoMeet() {
 
   let [messages, setMessages] = useState([]);
 
-  let [message, setMessage] = useState();
+  let [message, setMessage] = useState("");
 
   let [newMessage, setNewMessage] = useState(0);
 
@@ -78,6 +78,7 @@ export default function VideoMeet() {
 
   const getPermissions = async () => {
     try {
+
       const videoPermission = await navigator.mediaDevices.getUserMedia({
         video: true,
       });
@@ -86,6 +87,7 @@ export default function VideoMeet() {
       } else {
         setVideoAvailable(false);
       }
+      videoPermission.getTracks().forEach((track) => track.stop());
 
       const audioPermission = await navigator.mediaDevices.getUserMedia({
         audio: true,
@@ -95,6 +97,9 @@ export default function VideoMeet() {
       } else {
         setAudioAvailable(false);
       }
+      audioPermission.getTracks().forEach((track) => track.stop());
+
+
 
       if (navigator.mediaDevices.getDisplayMedia) {
         setScreenAvailable(true);
@@ -131,10 +136,10 @@ export default function VideoMeet() {
   }, [askForUsername]);
 
   let getUserMediaSuccess = (stream) => {
-    try {
+    if (!stream) return;
+
+    if (window.localStream) {
       window.localStream.getTracks().forEach((track) => track.stop());
-    } catch (e) {
-      console.log(e);
     }
 
     window.localStream = stream;
@@ -409,13 +414,15 @@ export default function VideoMeet() {
 
   let getDisplayMediaSuccess = (stream) => {
     try {
-      window.localStream.getTracks.forEach((track) => track.stop());
+      window.localStream.getTracks().forEach((track) => track.stop());
     } catch (e) {
       console.log(e);
     }
 
     window.localStream = stream;
-    localVideoRef.current.srcObject = stream;
+    if (localVideoRef.current) {                    // ADD
+      localVideoRef.current.srcObject = stream;      // CHANGE (wrap in guard)
+    }                                                 // ADD
 
     for (let id in connections) {
       if (id === socketIDRef.current) continue;
@@ -489,12 +496,22 @@ export default function VideoMeet() {
   };
 
   let handleEndCall = () => {
-    try {
-      let tracks = localVideoRef.current.srcObject.getTracks();
-      tracks.forEach((track) => track.stop());
-    } catch (e) {}
-    routeTo("/home");
-  };
+  try {
+    let tracks = localVideoRef.current.srcObject.getTracks();
+    tracks.forEach(track => track.stop());
+  } catch {}
+
+  for (let id in connections) {
+    connections[id].close();
+  }
+  connections = {};
+
+  if (socketRef.current) {
+    socketRef.current.disconnect();
+  }
+
+  routeTo("/home");
+}
 
   return (
     // LOBBY START
